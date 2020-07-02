@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class Mapper {
+public class EstateMapper {
 
     private ModelMapper eMapper;
 
@@ -19,7 +19,7 @@ public class Mapper {
     @Autowired
     private ObjectMapper jMapper;
 
-    public Mapper(){
+    public EstateMapper(){
         eMapper = new ModelMapper();
         eMapper.createTypeMap(Estate.class, EstateDTO.class)
                 .addMappings(mapper ->{

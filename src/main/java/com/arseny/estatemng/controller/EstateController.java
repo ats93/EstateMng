@@ -2,7 +2,7 @@ package com.arseny.estatemng.controller;
 
 import com.arseny.estatemng.dto.EstateDTO;
 import com.arseny.estatemng.service.EstateService;
-import com.arseny.estatemng.service.Mapper;
+import com.arseny.estatemng.service.EstateMapper;
 import com.arseny.estatemng.entities.Estate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ public class EstateController {
     private EstateService service;
 
     @Autowired
-    private Mapper mapper;
+    private EstateMapper mapper;
 
     @PostMapping(value = "/estate", produces = "applications/json")
     public ResponseEntity<String> postEstate(@RequestBody EstateDTO estate) throws Exception {

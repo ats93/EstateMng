@@ -54,3 +54,6 @@ build/
 ### VS Code ###
 .vscode/
 >>>>>>> Initial Commit. Working endpoints
+/mvnw
+/mvnw.cmd
+/.mvn/
