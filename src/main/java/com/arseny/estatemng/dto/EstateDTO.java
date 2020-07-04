@@ -2,7 +2,10 @@ package com.arseny.estatemng.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+
+import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
@@ -12,9 +15,13 @@ public class EstateDTO {
     private String name;
     private Double originalPrice;
     private Double price;
+    private TypeDTO type;
     private Boolean lowered;
     private String percentage;
     private String description;
+    private Short bathrooms;
+    private Short bedrooms;
+    private List<AmenityDTO> amenities;
 
     public String getRef() {
         return ref;
@@ -48,6 +55,14 @@ public class EstateDTO {
         this.price = price;
     }
 
+    public TypeDTO getType() {
+        return type;
+    }
+
+    public void setType(TypeDTO type) {
+        this.type = type;
+    }
+
     public Boolean getLowered() {
         return lowered;
     }
@@ -70,5 +85,13 @@ public class EstateDTO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<AmenityDTO> getAmenities() {
+        return amenities;
+    }
+
+    public void setAmenities(List<AmenityDTO> amenities) {
+        this.amenities = amenities;
     }
 }

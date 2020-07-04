@@ -1,23 +1,16 @@
 package com.arseny.estatemng.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
-import org.hibernate.annotations.DynamicUpdate;
+
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
+@Data
 public class Estate {
 
     @Id
@@ -33,9 +26,25 @@ public class Estate {
     private String name;
     private Double originalPrice;
     private Double price;
+    @ManyToOne
+    @JoinColumn(name = "type", referencedColumnName = "cod")
+    private TypeEstate type;
     private Boolean lowered;
     private String percentage;
     private String description;
+    private Short bedrooms;
+    private Short bathrooms;
+    @ManyToOne
+    @JoinColumn(name = "city", referencedColumnName = "cod")
+    private City city;
+    @ManyToOne
+//    @JoinColumns({
+//            @JoinColumn(name = "area", referencedColumnName = "cod", insertable = false, updatable = false),
+//            @JoinColumn(name = "city", referencedColumnName = "city", insertable = false, updatable = false)})
+    @JoinColumn(name = "area", referencedColumnName = "cod")
+    private Area area;
+    @ManyToMany
+    private List<Amenity> amenities;
 
     public String getCod() {
         return cod;
@@ -67,6 +76,14 @@ public class Estate {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public TypeEstate getType() {
+        return type;
+    }
+
+    public void setType(TypeEstate type) {
+        this.type = type;
     }
 
     public Boolean getLowered() {

@@ -43,4 +43,8 @@ public class EstateService {
 
         return repo.saveAndFlush(newEstate);
     }
+
+    public void delete(List<Estate> list){
+        repo.deleteInBatch(list);
+    }
 }
