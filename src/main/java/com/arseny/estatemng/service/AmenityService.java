@@ -20,7 +20,9 @@ public class AmenityService {
     }
 
     public List<Amenity> save(List<Amenity> list){
-        return repo.saveAll(list);
+        List<Amenity> vo = repo.saveAll(list);
+        repo.flush();
+        return vo;
     }
 
     public List<Amenity> findAll(){

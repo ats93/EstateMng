@@ -1,6 +1,6 @@
 package com.arseny.estatemng.entities;
 
-import lombok.*;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import static com.arseny.estatemng.utils.UtilMethods.toCapitalLetter;
 
 @Entity
-@Data
+
 public class TypeEstate {
     @Id
     @Column(unique = true)
@@ -19,5 +19,17 @@ public class TypeEstate {
 
     public void setCod(String cod) {
         this.cod = cod.toUpperCase();
+    }
+
+    public String getCod() {
+        return cod;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

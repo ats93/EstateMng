@@ -1,7 +1,5 @@
 package com.arseny.estatemng.entities;
 
-import lombok.*;
-
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
@@ -10,7 +8,6 @@ import java.util.List;
 
 
 @Entity
-@Data
 public class Estate {
 
     @Id
@@ -38,10 +35,9 @@ public class Estate {
     @JoinColumn(name = "city", referencedColumnName = "cod")
     private City city;
     @ManyToOne
-//    @JoinColumns({
-//            @JoinColumn(name = "area", referencedColumnName = "cod", insertable = false, updatable = false),
-//            @JoinColumn(name = "city", referencedColumnName = "city", insertable = false, updatable = false)})
-    @JoinColumn(name = "area", referencedColumnName = "cod")
+    @JoinColumns({
+            @JoinColumn(name = "area", referencedColumnName = "cod", insertable = false, updatable = false),
+            @JoinColumn(name = "city", referencedColumnName = "city", insertable = false, updatable = false)})
     private Area area;
     @ManyToMany
     private List<Amenity> amenities;
