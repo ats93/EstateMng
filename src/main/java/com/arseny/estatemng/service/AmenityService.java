@@ -1,9 +1,7 @@
 package com.arseny.estatemng.service;
 
-import com.arseny.estatemng.entities.Amenity;
-import com.arseny.estatemng.entities.TypeEstate;
+import com.arseny.estatemng.models.amenity.Amenity;
 import com.arseny.estatemng.repository.AmenityRepository;
-import com.arseny.estatemng.repository.TypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

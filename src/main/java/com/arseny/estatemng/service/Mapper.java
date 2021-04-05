@@ -1,6 +1,6 @@
 package com.arseny.estatemng.service;
 
-import com.arseny.estatemng.entities.*;
+import com.arseny.estatemng.models.estate.Estate;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

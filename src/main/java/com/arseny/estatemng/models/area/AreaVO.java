@@ -1,4 +1,4 @@
-package com.arseny.estatemng.dto;
+package com.arseny.estatemng.models.area;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class AreaDTO {
+public class AreaVO {
     private String name;
     private String city;
 

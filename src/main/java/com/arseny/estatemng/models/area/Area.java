@@ -1,6 +1,8 @@
-package com.arseny.estatemng.entities;
+package com.arseny.estatemng.models.area;
 
 
+
+import com.arseny.estatemng.models.city.City;
 
 import javax.persistence.*;
 import java.io.Serializable;

@@ -1,11 +1,12 @@
 package com.arseny.estatemng.service;
 
-import com.arseny.estatemng.entities.Estate;
+import com.arseny.estatemng.models.estate.Estate;
 import com.arseny.estatemng.repository.EstateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class EstateService {
@@ -28,6 +29,8 @@ public class EstateService {
 
     public Estate update(Estate newEstate){
         Estate oldEstate = findOne(newEstate.getCod());
+        if(oldEstate == null)
+            throw new NoSuchElementException("Estate not found");
 
         if(newEstate.getOriginalPrice() != null && newEstate.getOriginalPrice() == 0)
             newEstate.setOriginalPrice(null);

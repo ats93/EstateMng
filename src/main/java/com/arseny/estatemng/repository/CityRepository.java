@@ -1,6 +1,6 @@
 package com.arseny.estatemng.repository;
 
-import com.arseny.estatemng.entities.City;
+import com.arseny.estatemng.models.city.City;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

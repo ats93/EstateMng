@@ -1,6 +1,6 @@
 package com.arseny.estatemng.repository;
 
-import com.arseny.estatemng.entities.Amenity;
+import com.arseny.estatemng.models.amenity.Amenity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

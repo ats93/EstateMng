@@ -1,10 +1,9 @@
 package com.arseny.estatemng.controller;
 
-import com.arseny.estatemng.dto.AmenityDTO;
-import com.arseny.estatemng.entities.Amenity;
-import com.arseny.estatemng.service.AmenityService;
+import com.arseny.estatemng.models.amenity.AmenityVO;
+import com.arseny.estatemng.models.amenity.Amenity;
 import com.arseny.estatemng.mapper.MapperWrapper;
-import com.arseny.estatemng.service.Mapper;
+import com.arseny.estatemng.service.AmenityService;
 import com.arseny.estatemng.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,26 +21,24 @@ public class AmenityController {
     @Autowired
     private MapperWrapper mapper;
 
-    private Mapper jsonMapper;
-
     @PostMapping(value = "/am", produces = Constants.APP_JSON)
-    public ResponseEntity<String> post(@RequestBody AmenityDTO amenity) throws Exception {
+    public ResponseEntity<Amenity> post(@RequestBody AmenityVO amenity) throws Exception {
         Amenity dto = service.save(mapper.convert(amenity));
-        return ResponseEntity.ok(jsonMapper.entityToJson(dto));
+        return ResponseEntity.ok(dto);
     }
 
     @PostMapping(value = "/am/list", produces = Constants.APP_JSON)
-    public ResponseEntity<String> post(@RequestBody List<AmenityDTO> dtoList) throws Exception {
+    public ResponseEntity<List<Amenity>> post(@RequestBody List<AmenityVO> dtoList) throws Exception {
         List<Amenity> list = new ArrayList<>();
         dtoList.stream().forEach(o -> list.add(mapper.convert(o)));
         List<Amenity> vo = service.save(list);
-        return ResponseEntity.ok(jsonMapper.entityToJson(vo));
+        return ResponseEntity.ok(vo);
     }
 
     @GetMapping(value = "/am", produces = Constants.APP_JSON)
-    public ResponseEntity<String> findAll() throws Exception{
+    public ResponseEntity<List<Amenity>> findAll() throws Exception{
         List<Amenity> listVo = service.findAll();
-        return ResponseEntity.ok(jsonMapper.entityToJson(listVo));
+        return ResponseEntity.ok(listVo);
     }
 
     @DeleteMapping(value = "/am", produces = Constants.APP_JSON)

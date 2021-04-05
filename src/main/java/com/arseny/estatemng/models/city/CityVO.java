@@ -1,13 +1,12 @@
-package com.arseny.estatemng.dto;
+package com.arseny.estatemng.models.city;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class TypeDTO {
+public class CityVO {
     private String name;
 
     public String getName() {
@@ -16,12 +15,5 @@ public class TypeDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "TypeDTO{" +
-                "name='" + name + '\'' +
-                '}';
     }
 }

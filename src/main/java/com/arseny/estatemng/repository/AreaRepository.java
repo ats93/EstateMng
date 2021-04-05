@@ -1,6 +1,6 @@
 package com.arseny.estatemng.repository;
 
-import com.arseny.estatemng.entities.Area;
+import com.arseny.estatemng.models.area.Area;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

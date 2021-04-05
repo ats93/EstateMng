@@ -1,4 +1,4 @@
-package com.arseny.estatemng.entities;
+package com.arseny.estatemng.models.amenity;
 
 
 import javax.persistence.Column;

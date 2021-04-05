@@ -1,4 +1,4 @@
-package com.arseny.estatemng.entities;
+package com.arseny.estatemng.models.city;
 
 
 
@@ -6,11 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import static com.arseny.estatemng.utils.UtilMethods.toCapitalLetter;
-
 @Entity
-
-public class TypeEstate {
+public class City {
     @Id
     @Column(unique = true)
     private String cod;

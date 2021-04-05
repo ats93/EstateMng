@@ -1,6 +1,6 @@
 package com.arseny.estatemng.service;
 
-import com.arseny.estatemng.entities.Area;
+import com.arseny.estatemng.models.area.Area;
 import com.arseny.estatemng.repository.AreaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
